@@ -1,0 +1,86 @@
+/* Today's Topics Ranking */
+.today-topics-ranking {
+  padding: 12px;
+  background: linear-gradient(135deg, #f0f4ff 0%, #fef0ff 100%);
+  border-radius: 10px;
+  min-height: 140px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.ranking-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.ranking-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 12px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.ranking-item:hover {
+  transform: translateX(2px);
+  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.12);
+}
+
+.ranking-badge {
+  font-size: 20px;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.rank-number {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background: #667eea;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.ranking-theme {
+  flex: 1;
+  font-weight: 600;
+  color: #333;
+  font-size: 14px;
+  word-break: break-word;
+}
+
+.ranking-count {
+  font-size: 16px;
+  font-weight: bold;
+  color: #667eea;
+  min-width: 36px;
+  text-align: right;
+}
+
+.ranking-loading,
+.ranking-empty {
+  text-align: center;
+  padding: 12px;
+  color: #999;
+  font-size: 13px;
+}
+
+.ranking-loading {
+  color: #667eea;
+  font-weight: 500;
+}
