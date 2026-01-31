@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { API_BASE_URL } from '../services/api';
 import '../styles/ContactForm.css';
 
 const ContactForm = ({ onClose }) => {
@@ -26,7 +27,7 @@ const ContactForm = ({ onClose }) => {
 
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch('http://localhost/chatapp/src/api/contact.php', {
+      const response = await fetch(`${API_BASE_URL}contact.php`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

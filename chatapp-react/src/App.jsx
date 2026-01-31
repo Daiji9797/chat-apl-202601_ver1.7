@@ -46,8 +46,18 @@ function AppContent() {
   const [showFutureStory, setShowFutureStory] = useState(false);
   const [showContact, setShowContact] = useState(false);
 
+  // URLパラメータでお問い合わせフォームを自動表示
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('contact') === 'true') {
+      setShowContact(true);
+      // URLをクリーンアップ
+      window.history.replaceState({}, '', window.location.pathname);
+    }
+  }, []);
+
   if (loading) {
-    return <div className="auth-container">�ǂݍ��ݒ�...</div>;
+    return <div className="auth-container">�ǂݍ��ݒ�...</div>;
   }
 
   if (!isLoggedIn) {

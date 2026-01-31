@@ -11,8 +11,8 @@ export default defineConfig(({ mode }) => {
   
   return {
     plugins: [react()],
-    // 本番環境の場合は相対パスに設定
-    base: isProduction ? './' : '/',
+    // 本番環境の場合は /chatapp-react/ 配下で動作
+    base: isProduction ? '/chatapp-react/' : '/',
     server: {
       port: 5173,
       proxy: {

@@ -235,7 +235,12 @@ const RegisterForm = ({ onShowLogin, onShowContact }) => {
                 onChange={(e) => setAgreedToTerms(e.target.checked)}
               />
               <span>
-                <a href="/terms.html" target="_blank" rel="noopener noreferrer" className="terms-link">
+                <a
+                  href={`${import.meta.env.BASE_URL}terms.html`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="terms-link"
+                >
                   利用規約
                 </a>
                 に同意します

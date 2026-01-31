@@ -2,14 +2,15 @@
  * API通信モジュール
  */
 
-// 環境変数から API URL を取得（ある場合）し、なければ実行中オリジンを利用
-const ORIGIN_API_BASE = (typeof window !== 'undefined' && window.location && window.location.origin)
-  ? `${window.location.origin}/api/`
-  : '/api/';
+const isBrowser = typeof window !== 'undefined' && window.location && window.location.origin;
+const DEFAULT_DEV_API_BASE = '/api/';
+const DEFAULT_PROD_API_BASE = isBrowser
+  ? `${window.location.origin}/chatapp/src/api/`
+  : '/chatapp/src/api/';
 
-const API_BASE_URL = import.meta.env.VITE_API_URL
-  ? `${import.meta.env.VITE_API_URL}/api/`
-  : ORIGIN_API_BASE;
+export const API_BASE_URL = import.meta.env.VITE_API_URL
+  ? `${import.meta.env.VITE_API_URL.replace(/\/$/, '')}/api/`
+  : (import.meta.env.PROD ? DEFAULT_PROD_API_BASE : DEFAULT_DEV_API_BASE);
 
 console.log('API_BASE_URL:', API_BASE_URL);
 

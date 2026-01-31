@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 const distDir = path.resolve(__dirname, '../dist');
-const targetDir = path.resolve(__dirname, '../../chatapp/public');
+const targetDir = path.resolve(__dirname, '../../chatapp');
 
 // ターゲットディレクトリをクリア（.htaccessは保持）
 function clearTargetDir() {
@@ -44,4 +44,4 @@ console.log('Deploying React build to XAMPP...');
 clearTargetDir();
 copyDir(distDir, targetDir);
 console.log('Deployed successfully to', targetDir);
-console.log('Access at: http://localhost/chatapp/public/index.html');
+console.log('Access at: http://localhost/chatapp/index.html');

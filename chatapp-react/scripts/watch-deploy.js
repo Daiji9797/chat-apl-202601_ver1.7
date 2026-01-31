@@ -4,7 +4,7 @@ const path = require('path');
 const fs = require('fs');
 
 const distDir = path.resolve(__dirname, '../dist');
-const targetDir = path.resolve(__dirname, '../../chatapp/public');
+const targetDir = path.resolve(__dirname, '../../chatapp');
 
 let deployTimeout = null;
 
@@ -47,7 +47,7 @@ function deploy() {
   
   copyDir(distDir, targetDir);
   console.log('Deployed successfully!');
-  console.log('http://localhost/chatapp/public/index.html\n');
+  console.log('http://localhost/chatapp/index.html\n');
 }
 
 // Viteビルドをwatch modeで起動
